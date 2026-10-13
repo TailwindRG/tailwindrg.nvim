@@ -1,0 +1,1 @@
+require("tailwindrg").load("light")

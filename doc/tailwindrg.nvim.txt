@@ -1,0 +1,39 @@
+*tailwindrg.nvim.txt*  Tailwind Resource Group colorscheme
+
+CONFIGURATION                                         *tailwindrg.nvim*
+
+Requires Neovim 0.9+ and a true color terminal.
+Call setup before applying the colorscheme: >lua
+    require("tailwindrg").setup({
+      variant = "auto",
+      transparent = false,
+      italic_comments = true,
+      overrides = {},
+    })
+    vim.cmd.colorscheme("tailwindrg")
+<
+variant: "dark", "light", or "auto" (default, follows 'background').
+transparent: omit editor, sign, fold, and tab backgrounds; defaults to false.
+italic_comments: italicize comments; defaults to true.
+overrides: highlight table or function(palette) returning a highlight table.
+See |nvim_set_hl()| for highlight attributes.
+
+COMMANDS                                              *tailwindrg-usage*
+
+:colorscheme tailwindrg        Apply the configured variant.
+:colorscheme tailwindrg-light  Apply the light palette explicitly.
+
+With variant="auto", set background=dark or background=light to choose a
+palette. A fixed variant in setup takes precedence for :colorscheme tailwindrg.
+
+PALETTE AND LUALINE                                    *tailwindrg-palette*
+
+require("tailwindrg").palette("dark") returns the dark palette table.
+require("tailwindrg").palette("light") returns the light palette table.
+
+Apply the colorscheme before configuring lualine: >lua
+    require("lualine").setup({ options = { theme = "tailwindrg" } })
+<
+Run lualine setup again after changing variants to refresh its palette.
+
+ vim:tw=78:ts=8:ft=help:norl:

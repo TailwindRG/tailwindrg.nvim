@@ -4,6 +4,8 @@ A Neovim colorscheme based on Tailwind Resource Group's navy and warm orange
 palette. Includes dark and light variants, Treesitter and LSP highlights,
 terminal colors, and a lualine theme.
 
+![Preview of the dark and light TailwindRG themes](tailwindrg.nvim.png)
+
 ## Requirements
 
 - Neovim 0.9 or newer.
